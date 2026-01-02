@@ -50,7 +50,7 @@ function App() {
   const [password, setPassword] = useState("");
 
   const fetchTasks = useCallback(() => {
-    fetch("http://localhost:3000/tasks", {
+    fetch("https://task-backend-vw1t.onrender.com/tasks", {
       headers: {
         Authorization: token,
       },
@@ -72,7 +72,7 @@ function App() {
   function addTask() {
     if (!task.trim()) return;
 
-    fetch("http://localhost:3000/tasks", {
+    fetch("https://task-backend-vw1t.onrender.com/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ function App() {
 
 
   function signup() {
-    fetch("http://localhost:3000/signup", {
+    fetch("https://task-backend-vw1t.onrender.com/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -133,7 +133,7 @@ function App() {
   function login() {
     setError("");
 
-    fetch("http://localhost:3000/login", {
+    fetch("https://task-backend-vw1t.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
